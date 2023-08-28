@@ -1,0 +1,40 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    text-align: left;
+    color: #FFFFFF;
+    border-radius: 6px;
+
+    padding: 20px 26px;
+
+    animation: slideIn 0.5s forwards;
+    z-index: 3;
+}
+
+.notification p {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.notification.success {
+    background: #66BB6A;
+    box-shadow: 0 10px 15px #4CAF505C;
+}
+
+.notification.error {
+    background: #EF7DA0;
+    box-shadow: 0 10px 15px #EF7DA05C;
+}
+
+@keyframes slideIn {
+    0% {
+        right: -300px;
+    }
+    100% {
+        right: 20px;
+    }
+}

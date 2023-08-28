@@ -1,0 +1,11 @@
+<div class="modal" ng-controller="ModalWindowController">
+  <div class="modal__wrap">
+      <div class="modal__head">
+          <h2 class="modal__title">
+              {{ modalType === 'create' ? 'Create new user' : fullName }}
+          </h2>
+          <button class="button button__close" ng-click="closeModal()"></button>
+      </div>
+      <user-form></user-form>
+  </div>
+</div>

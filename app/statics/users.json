@@ -1,0 +1,38 @@
+{
+  "columns": [
+    "username",
+    "firstName",
+    "lastName",
+    "email",
+    "type"
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "johnSnow1992",
+      "firstName": "John",
+      "lastName": "Snow",
+      "email": "johnSnow1992@gmai.com",
+      "type": "Admin",
+      "password": "qwerty123"
+    },
+    {
+      "id": "2",
+      "username": "josephNoan",
+      "firstName": "Joseph",
+      "lastName": "Noan",
+      "email": "josephNoan@gmai.com",
+      "type": "Driver",
+      "password": "qwerty124"
+    },
+    {
+      "id": "3",
+      "username": "michaelLiam",
+      "firstName": "Michael",
+      "lastName": "Liam",
+      "email": "michaelLiam1992@gmai.com",
+      "type": "Driver",
+      "password": "qwerty125"
+    }
+  ]
+}

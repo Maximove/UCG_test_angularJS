@@ -1,0 +1,42 @@
+<div ng-controller="UserListController">
+    <div class="container">
+        <div class="action">
+            <button class="button button__create" ng-click="openModal('create')">Create User</button>
+        </div>
+        <div class="main">
+            <table ng-if="users.length" class="user-table">
+                <thead>
+                <tr>
+                    <th ng-repeat="column in columns" class="user-table__header-cell">
+                        {{ column }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in users" ng-click="goToUserDetail(user.id)">
+                    <td class="user-table__data-cell">
+                        <p title="{{ user.username }}">{{ user.username }}</p>
+                    </td>
+                    <td class="user-table__data-cell">
+                        <p title="{{ user.firstName }}">{{ user.firstName }}</p>
+                    </td>
+                    <td class="user-table__data-cell">
+                        <p title="{{ user.lastName }}">{{ user.lastName }}</p>
+                    </td>
+                    <td class="user-table__data-cell">
+                        <a title="{{ user.email }}" href="mailto:user.email" class="link" ng-click="$event.stopPropagation()">{{ user.email }}</a>
+                    </td>
+                    <td class="user-table__data-cell">
+                        <p title="{{ user.type }}">{{ user.type }}</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div ng-if="!users.length" class="empty">
+                <p>No Users yet...</p>
+            </div>
+        </div>
+    </div>
+    <modal-window ng-if="showModal"></modal-window>
+    <notification ng-if="notificationModal.show"></notification>
+</div>

@@ -1,0 +1,62 @@
+<form novalidate>
+    <div class="form__control">
+        <label for="username">Username*</label>
+        <input type="text" id="username" ng-class="errorMessages.username ? 'error' : ''" ng-focus="clearError('username')" ng-model="user.username" required>
+        <p class="form__error" ng-if="errorMessages.username">{{errorMessages.username}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="first_name">First Name*</label>
+        <input type="text" id="first_name" ng-class="errorMessages.firstName ? 'error' : ''" ng-focus="clearError('firstName')" ng-model="user.firstName" required>
+        <p class="form__error" ng-if="errorMessages.firstName">{{errorMessages.firstName}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="last_name">Last Name*</label>
+        <input type="text" id="last_name" ng-class="errorMessages.lastName ? 'error' : ''" ng-focus="clearError('lastName')" ng-model="user.lastName" required>
+        <p class="form__error" ng-if="errorMessages.lastName">{{errorMessages.lastName}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="email">Email*</label>
+        <div class="email-icon__wrap">
+            <div class="email-icon"></div>
+            <input type="email" id="email" ng-class="errorMessages.email ? 'error email-field' : 'email-field'" ng-focus="clearError('email')" ng-model="user.email" required>
+        </div>
+        <p class="form__error" ng-if="errorMessages.email">{{errorMessages.email}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="user_type">User Type*</label>
+        <select
+                id="user_type"
+                ng-model="user.type"
+                ng-class="errorMessages.type ? 'error' : ''"
+                ng-focus="clearError('type')"
+                ng-options="option.name for option in types track by option.id"
+                required>
+        </select>
+        <p class="form__error" ng-if="errorMessages.type">{{errorMessages.type}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="password">Password*</label>
+        <input type="password" id="password" ng-class="errorMessages.password ? 'error' : ''" ng-focus="clearError('password')" ng-model="user.password" required>
+        <p class="form__error" ng-if="errorMessages.password">{{errorMessages.password}}</p>
+    </div>
+
+    <div class="form__control">
+        <label for="passwordRepeat">Repeat Password*</label>
+        <input type="password" id="passwordRepeat" ng-class="errorMessages.passwordRepeat ? 'error' : ''" ng-model="user.passwordRepeat" ng-change="checkPasswordMatch()" required>
+        <p class="form__error" ng-if="errorMessages.passwordRepeat">{{errorMessages.passwordRepeat}}</p>
+    </div>
+
+    <div ng-if="modalType === 'edit'" class="modal__buttons modal__buttons-edit">
+        <button class="button button__delete" ng-click="deleteCurrentUser()">Delete</button>
+        <button type="button" class="button button__create" ng-click="editUser()">Save</button>
+    </div>
+
+    <div ng-if="modalType === 'create'" class="modal__buttons modal__buttons-create">
+        <button type="button" class="button button__create" ng-click="createUser()">Create</button>
+    </div>
+</form>

@@ -1,0 +1,31 @@
+<div ng-controller="UserDetailController">
+    <div class="container">
+        <div class="user-detail">
+            <div class="user-detail__wrap">
+                <div class="user-detail__item">
+                    <span>Username: </span>
+                    <p>{{ user.username }}</p>
+                </div>
+                <div class="user-detail__item">
+                    <span>First Name: </span>
+                    <p>{{ user.firstName }}</p>
+                </div>
+                <div class="user-detail__item">
+                    <span>Last Name: </span>
+                    <p>{{ user.lastName }}</p>
+                </div>
+                <div class="user-detail__item">
+                    <span>Email: </span>
+                    <a href="mailto:user.email" class="link">{{ user.email }}</a>
+                </div>
+                <div class="user-detail__item">
+                    <span>Type: </span>
+                    <p>{{ user.type }}</p>
+                </div>
+            </div>
+            <button class="button button__create" ng-click="openModal('edit')">Edit User</button>
+        </div>
+    </div>
+    <modal-window ng-if="showModal"></modal-window>
+    <notification ng-if="notificationModal"></notification>
+</div>

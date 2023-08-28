@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="userApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJs Test</title>
+    <link rel="stylesheet" href="assets/styles/app.css" />
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/angular-uuid@0.0.4/angular-uuid.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/services/dataService.js"></script>
+    <script src="js/services/localStorageService.js"></script>
+
+    <script src="js/controllers/notificationController.js"></script>
+    <script src="js/controllers/userListController.js"></script>
+    <script src="js/controllers/userFormController.js"></script>
+    <script src="js/controllers/userDetailController.js"></script>
+    <script src="js/controllers/modalWindowController.js"></script>
+    <script src="js/controllers/notFoundController.js"></script>
+
+    <script src="js/directives/notificationDirective.js"></script>
+    <script src="js/directives/modalDirective.js"></script>
+    <script src="js/directives/formDirective.js"></script>
+
+    <script src="js/helpers/debounce.js"></script>
+    <script src="js/constants.js"></script>
+  </head>
+  <body>
+
+  <ng-view></ng-view>
+
+  </body>
+</html>
